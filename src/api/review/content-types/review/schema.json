@@ -26,6 +26,9 @@
       "relation": "manyToOne",
       "target": "api::location.location",
       "inversedBy": "reviews"
+    },
+    "approved": {
+      "type": "boolean"
     }
   }
 }

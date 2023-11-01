@@ -885,6 +885,7 @@ export interface ApiReviewReview extends Schema.CollectionType {
       'manyToOne',
       'api::location.location'
     >;
+    approved: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
