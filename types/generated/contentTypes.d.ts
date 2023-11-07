@@ -1107,6 +1107,7 @@ export interface ApiReviewReview extends Schema.CollectionType {
       'api::location.location'
     >;
     approved: Attribute.Boolean;
+    image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1146,6 +1147,7 @@ export interface ApiReviewEngReviewEng extends Schema.CollectionType {
       'manyToOne',
       'api::location-eng.location-eng'
     >;
+    image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

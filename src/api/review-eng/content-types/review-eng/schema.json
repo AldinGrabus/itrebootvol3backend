@@ -29,6 +29,16 @@
       "relation": "manyToOne",
       "target": "api::location-eng.location-eng",
       "inversedBy": "review_engs"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
