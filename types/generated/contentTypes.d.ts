@@ -1011,7 +1011,7 @@ export interface ApiLocationEngLocationEng extends Schema.CollectionType {
   info: {
     singularName: 'location-eng';
     pluralName: 'location-engs';
-    displayName: 'Location-eng';
+    displayName: 'location-eng';
     description: '';
   };
   options: {
