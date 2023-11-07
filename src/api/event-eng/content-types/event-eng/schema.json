@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_engs",
+  "info": {
+    "singularName": "event-eng",
+    "pluralName": "event-engs",
+    "displayName": "event-eng"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "paragraph": {
+      "type": "richtext"
+    },
+    "startingDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "category_engs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::kategorija.kategorija"
+    }
+  }
+}

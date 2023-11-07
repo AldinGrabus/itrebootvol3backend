@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "challenge_engs",
+  "info": {
+    "singularName": "challenge-eng",
+    "pluralName": "challenge-engs",
+    "displayName": "challenge-eng",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "location_eng": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::location-eng.location-eng",
+      "inversedBy": "challenge_engs"
+    }
+  }
+}

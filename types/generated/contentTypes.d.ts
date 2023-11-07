@@ -777,6 +777,77 @@ export interface ApiChallengeChallenge extends Schema.CollectionType {
   };
 }
 
+export interface ApiChallengeEngChallengeEng extends Schema.CollectionType {
+  collectionName: 'challenge_engs';
+  info: {
+    singularName: 'challenge-eng';
+    pluralName: 'challenge-engs';
+    displayName: 'challenge-eng';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    content: Attribute.String;
+    location_eng: Attribute.Relation<
+      'api::challenge-eng.challenge-eng',
+      'manyToOne',
+      'api::location-eng.location-eng'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::challenge-eng.challenge-eng',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::challenge-eng.challenge-eng',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiContactContact extends Schema.CollectionType {
+  collectionName: 'contacts';
+  info: {
+    singularName: 'contact';
+    pluralName: 'contacts';
+    displayName: 'contact';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    email: Attribute.String;
+    subject: Attribute.String;
+    message: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact.contact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiEventEvent extends Schema.CollectionType {
   collectionName: 'events';
   info: {
@@ -809,6 +880,76 @@ export interface ApiEventEvent extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::event.event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiEventEngEventEng extends Schema.CollectionType {
+  collectionName: 'event_engs';
+  info: {
+    singularName: 'event-eng';
+    pluralName: 'event-engs';
+    displayName: 'event-eng';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    description: Attribute.Text;
+    paragraph: Attribute.RichText;
+    startingDate: Attribute.Date;
+    endDate: Attribute.Date;
+    category_engs: Attribute.Relation<
+      'api::event-eng.event-eng',
+      'oneToMany',
+      'api::kategorija.kategorija'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::event-eng.event-eng',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::event-eng.event-eng',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiKategorijaKategorija extends Schema.CollectionType {
+  collectionName: 'kategorijas';
+  info: {
+    singularName: 'kategorija';
+    pluralName: 'kategorijas';
+    displayName: 'category-eng';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::kategorija.kategorija',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::kategorija.kategorija',
       'oneToOne',
       'admin::user'
     > &
@@ -865,6 +1006,86 @@ export interface ApiLocationLocation extends Schema.CollectionType {
   };
 }
 
+export interface ApiLocationEngLocationEng extends Schema.CollectionType {
+  collectionName: 'location_engs';
+  info: {
+    singularName: 'location-eng';
+    pluralName: 'location-engs';
+    displayName: 'Location-eng';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    description: Attribute.Text;
+    paragraph: Attribute.RichText;
+    image: Attribute.Media;
+    category_engs: Attribute.Relation<
+      'api::location-eng.location-eng',
+      'oneToMany',
+      'api::kategorija.kategorija'
+    >;
+    review_engs: Attribute.Relation<
+      'api::location-eng.location-eng',
+      'oneToMany',
+      'api::review-eng.review-eng'
+    >;
+    challenge_engs: Attribute.Relation<
+      'api::location-eng.location-eng',
+      'oneToMany',
+      'api::challenge-eng.challenge-eng'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::location-eng.location-eng',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::location-eng.location-eng',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNewsletterNewsletter extends Schema.CollectionType {
+  collectionName: 'newsletters';
+  info: {
+    singularName: 'newsletter';
+    pluralName: 'newsletters';
+    displayName: 'newsletter';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Email: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::newsletter.newsletter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::newsletter.newsletter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiReviewReview extends Schema.CollectionType {
   collectionName: 'reviews';
   info: {
@@ -904,6 +1125,45 @@ export interface ApiReviewReview extends Schema.CollectionType {
   };
 }
 
+export interface ApiReviewEngReviewEng extends Schema.CollectionType {
+  collectionName: 'review_engs';
+  info: {
+    singularName: 'review-eng';
+    pluralName: 'review-engs';
+    displayName: 'review-eng';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    surname: Attribute.String;
+    content: Attribute.Text;
+    approved: Attribute.Boolean;
+    location_eng: Attribute.Relation<
+      'api::review-eng.review-eng',
+      'manyToOne',
+      'api::location-eng.location-eng'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::review-eng.review-eng',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::review-eng.review-eng',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -923,9 +1183,16 @@ declare module '@strapi/types' {
       'api::admin.admin': ApiAdminAdmin;
       'api::category.category': ApiCategoryCategory;
       'api::challenge.challenge': ApiChallengeChallenge;
+      'api::challenge-eng.challenge-eng': ApiChallengeEngChallengeEng;
+      'api::contact.contact': ApiContactContact;
       'api::event.event': ApiEventEvent;
+      'api::event-eng.event-eng': ApiEventEngEventEng;
+      'api::kategorija.kategorija': ApiKategorijaKategorija;
       'api::location.location': ApiLocationLocation;
+      'api::location-eng.location-eng': ApiLocationEngLocationEng;
+      'api::newsletter.newsletter': ApiNewsletterNewsletter;
       'api::review.review': ApiReviewReview;
+      'api::review-eng.review-eng': ApiReviewEngReviewEng;
     }
   }
 }

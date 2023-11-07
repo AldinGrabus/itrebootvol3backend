@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "location_engs",
+  "info": {
+    "singularName": "location-eng",
+    "pluralName": "location-engs",
+    "displayName": "Location-eng",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "paragraph": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "category_engs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::kategorija.kategorija"
+    },
+    "review_engs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review-eng.review-eng",
+      "mappedBy": "location_eng"
+    },
+    "challenge_engs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::challenge-eng.challenge-eng",
+      "mappedBy": "location_eng"
+    }
+  }
+}
