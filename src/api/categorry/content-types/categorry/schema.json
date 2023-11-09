@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "categorries",
+  "info": {
+    "singularName": "categorry",
+    "pluralName": "categorries",
+    "displayName": "categorry"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

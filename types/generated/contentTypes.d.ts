@@ -711,6 +711,36 @@ export interface ApiAdminAdmin extends Schema.CollectionType {
   };
 }
 
+export interface ApiCategorryCategorry extends Schema.SingleType {
+  collectionName: 'categorries';
+  info: {
+    singularName: 'categorry';
+    pluralName: 'categorries';
+    displayName: 'categorry';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::categorry.categorry',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::categorry.categorry',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
@@ -1183,6 +1213,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::admin.admin': ApiAdminAdmin;
+      'api::categorry.categorry': ApiCategorryCategorry;
       'api::category.category': ApiCategoryCategory;
       'api::challenge.challenge': ApiChallengeChallenge;
       'api::challenge-eng.challenge-eng': ApiChallengeEngChallengeEng;
