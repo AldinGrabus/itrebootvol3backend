@@ -777,13 +777,14 @@ export interface ApiChallengeChallenge extends Schema.CollectionType {
     singularName: 'challenge';
     pluralName: 'challenges';
     displayName: 'challenge';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     name: Attribute.String;
-    content: Attribute.Text;
+    description: Attribute.Text;
     location: Attribute.Relation<
       'api::challenge.challenge',
       'manyToOne',
