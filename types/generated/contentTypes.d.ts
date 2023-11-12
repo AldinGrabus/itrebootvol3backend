@@ -790,6 +790,7 @@ export interface ApiChallengeChallenge extends Schema.CollectionType {
       'manyToOne',
       'api::location.location'
     >;
+    image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

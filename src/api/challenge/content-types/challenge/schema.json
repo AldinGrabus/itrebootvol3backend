@@ -23,6 +23,16 @@
       "relation": "manyToOne",
       "target": "api::location.location",
       "inversedBy": "challenges"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
