@@ -4,7 +4,8 @@
   "info": {
     "singularName": "challenge",
     "pluralName": "challenges",
-    "displayName": "challenge"
+    "displayName": "challenge",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,7 +15,7 @@
     "name": {
       "type": "string"
     },
-    "content": {
+    "description": {
       "type": "text"
     },
     "location": {
